@@ -5,11 +5,11 @@ Feature: Project Overview
 
   Scenario: List all current or future projects
     Given the user has requested the project overview
-    Then the user should see a list containing project "A"
-    And the user should see a list containing project "C"
-    But the user should not see a list containing project "B"
+    Then the list of projects should contain "Resource manager"
+    And the list of projects should contain "Fitness planner"
+    But the list of projects should not contain "Christmas micro-site"
 
   Scenario: Navigate to project details
     Given the user has requested the project overview
-    When the user clicks the title of project "A"
-    Then the user should see the headline "Assign to Project A"
+    When the user clicks the project "Resource manager"
+    Then the user should see the headline "Resource manager"
