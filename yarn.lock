@@ -4109,6 +4109,11 @@ cypress-cucumber-preprocessor@^2.0.1:
     minimist "^1.2.0"
     through "^2.3.8"
 
+cypress-screenplay@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/cypress-screenplay/-/cypress-screenplay-0.1.0.tgz#64de40e3e14686e42597217ed2d66775930043f3"
+  integrity sha512-FYu+isW1YxG6IMCP2U/YUYJBj+BZatNSqsr0rrKu8vgLW80UgjWMTJpzh70PvryfODjtuOmonl1GO+RGfZke3g==
+
 cypress@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/cypress/-/cypress-4.2.0.tgz#45673fb648b1a77b9a78d73e58b89ed05212d243"
