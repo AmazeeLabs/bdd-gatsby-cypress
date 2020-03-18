@@ -5,3 +5,11 @@
  */
 
 // You can delete this file if you're not using it
+
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage } = actions
+  if (page.path.match(/^\/project\//)) {
+    page.matchPath = "/project/*"
+    createPage(page)
+  }
+}
