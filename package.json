@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "apollo-server": "^2.11.0",
     "gatsby": "^2.19.45",
     "gatsby-image": "^2.2.44",
     "gatsby-plugin-manifest": "^2.2.48",
@@ -13,6 +14,7 @@
     "gatsby-plugin-sharp": "^2.4.13",
     "gatsby-source-filesystem": "^2.1.56",
     "gatsby-transformer-sharp": "^2.3.19",
+    "graphql": "^14.6.0",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
@@ -40,6 +42,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "cypress": "cypress open",
+    "api": "node src/api/index.js",
     "test": "cypress run"
   },
   "repository": {
