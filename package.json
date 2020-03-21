@@ -19,8 +19,12 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^6.0.0",
+    "chai": "^4.2.0",
     "cypress": "^4.2.0",
     "cypress-cucumber-preprocessor": "^2.0.1",
+    "cypress-screenplay": "^0.1.0",
+    "mocha": "^7.1.1",
     "prettier": "^1.19.1"
   },
   "keywords": [
