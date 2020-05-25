@@ -24,7 +24,13 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/react": "^5.3.19",
     "@testing-library/cypress": "^6.0.0",
+    "babel-loader": "^8.1.0",
     "chai": "^4.2.0",
     "cypress": "^4.2.0",
     "cypress-cucumber-preprocessor": "^2.0.1",
@@ -45,7 +51,9 @@
     "clean": "gatsby clean",
     "cypress": "cypress open",
     "api": "node src/api/index.js",
-    "test": "cypress run"
+    "test": "cypress run",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
