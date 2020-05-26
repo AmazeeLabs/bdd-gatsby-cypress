@@ -17,3 +17,9 @@ global.__PATH_PREFIX__ = ""
 window.___navigate = pathname => {
   action("NavigateTo:")(pathname)
 }
+
+// Global decorator for adding sinon
+addDecorator((storyFn, context) => {
+  sinon.restore();
+  return storyFn(context)
+})

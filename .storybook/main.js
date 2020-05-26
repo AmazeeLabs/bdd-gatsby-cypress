@@ -1,6 +1,7 @@
 module.exports = {
-  stories: ['../stories/**/*.stories.js'],
-  addons: ['@storybook/addon-actions', '@storybook/addon-links'],
+  // You will want to change this to wherever your Stories will live.
+  stories: ["../stories/**/*.stories.js"],
+  addons: ["@storybook/addon-actions", "@storybook/addon-links"],
   webpackFinal: async config => {
     // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
     config.module.rules[0].exclude = [/node_modules\/(?!(gatsby)\/)/]
@@ -9,7 +10,13 @@ module.exports = {
     // use @babel/preset-react for JSX and env (instead of staged presets)
     config.module.rules[0].use[0].options.presets = [
       require.resolve("@babel/preset-react"),
-      require.resolve("@babel/preset-env"),
+      [
+        require.resolve("@babel/preset-env"),
+        {
+          // Transpile modules to commonjs so sinon can stub them.
+          modules: "commonjs",
+        },
+      ],
     ]
     config.module.rules[0].use[0].options.plugins = [
       // use @babel/plugin-proposal-class-properties for class arrow functions
@@ -18,7 +25,7 @@ module.exports = {
       require.resolve("babel-plugin-remove-graphql-queries"),
     ]
     // Prefer Gatsby ES6 entrypoint (module) over commonjs (main) entrypoint
-    config.resolve.mainFields = ["browser", "module", "main"];
-    return config;
+    config.resolve.mainFields = ["browser", "module", "main"]
+    return config
   },
-};
+}
