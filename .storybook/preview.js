@@ -1,6 +1,6 @@
 import { action } from "@storybook/addon-actions"
 import { addDecorator } from "@storybook/react"
-import sinon from 'sinon';
+import sinon from "sinon"
 
 // Gatsby's Link overrides:
 // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.
@@ -12,14 +12,18 @@ global.___loader = {
 }
 // __PATH_PREFIX__ is used inside gatsby-link an other various places. For storybook not to crash, you need to set it as well.
 global.__PATH_PREFIX__ = ""
-// Navigating through a gatsby app using gatsby-link or any other gatsby component will use the `___navigate` method.
-// In Storybook it makes more sense to log an action than doing an actual navigate. Checkout the actions addon docs for more info: https://github.com/storybookjs/storybook/tree/master/addons/actions.
-window.___navigate = pathname => {
-  action("NavigateTo:")(pathname)
+
+// Only mock the ___navigate function if we are in a browser environment.
+if (typeof window !== "undefined") {
+  // Navigating through a gatsby app using gatsby-link or any other gatsby component will use the `___navigate` method.
+  // In Storybook it makes more sense to log an action than doing an actual navigate. Checkout the actions addon docs for more info: https://github.com/storybookjs/storybook/tree/master/addons/actions.
+  window.___navigate = pathname => {
+    action("NavigateTo:")(pathname)
+  }
 }
 
 // Global decorator for adding sinon
 addDecorator((storyFn, context) => {
-  sinon.restore();
+  sinon.restore()
   return storyFn(context)
 })
