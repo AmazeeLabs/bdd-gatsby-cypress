@@ -40,6 +40,7 @@
     "cypress-screenplay": "^0.1.0",
     "jest": "25",
     "jest-css-modules": "^2.1.0",
+    "loki": "^0.20.3",
     "mocha": "^7.1.1",
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.13.1",
@@ -68,5 +69,20 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.docker",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.docker",
+        "preset": "iPhone 7"
+      }
+    }
   }
 }

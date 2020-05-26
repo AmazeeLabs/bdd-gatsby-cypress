@@ -1,5 +1,6 @@
 import { action } from "@storybook/addon-actions"
 import { addDecorator } from "@storybook/react"
+import 'loki/configure-react';
 import sinon from "sinon"
 
 // Gatsby's Link overrides:
