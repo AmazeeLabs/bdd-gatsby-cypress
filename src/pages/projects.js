@@ -23,7 +23,7 @@ const ProjectsPage = () => {
     )
   }
 
-  if (!data.projects) {
+  if (!data.projects || !data.projects.length) {
     return (
       <p>
         <em>No active projects.</em>
