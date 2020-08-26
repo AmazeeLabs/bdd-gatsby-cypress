@@ -11,10 +11,10 @@ import PropTypes from "prop-types"
 import Header from "./header"
 import "./layout.css"
 
-import * as metadata from '../hooks/metadata';
+import * as metadata from "../external/metadata"
 
 const Layout = ({ children }) => {
-  const data = metadata.useSiteMetadata();
+  const data = metadata.useSiteMetadata()
 
   return (
     <>

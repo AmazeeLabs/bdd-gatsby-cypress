@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Router } from "@reach/router"
-import { useProjects } from "../hooks/projects"
+import { useProjects } from "../external/projects"
 
 const ProjectDetailPage = ({ id }) => {
   const { data, loading, error } = useProjects()

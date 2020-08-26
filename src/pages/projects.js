@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import moment from "moment"
-import { useProjects } from "../hooks/projects"
+import { useProjects } from "../external/projects"
 
 const ProjectsPage = () => {
   const { data, loading, error } = useProjects()
