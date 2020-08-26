@@ -4,6 +4,7 @@ import AddProjectPage from "../src/pages/projects/add"
 import { stubMetadata } from "../src/external/metadata.stubs"
 import {
   stubAddProject,
+  stubAddProjectError,
   stubProjects,
   stubProjectsEmpty,
   stubProjectsError,
@@ -42,5 +43,11 @@ export const Error = () => {
 export const AddForm = () => {
   stubMetadata()
   const addProjectStub = stubAddProject()
+  return <AddProjectPage />
+}
+
+export const AddFormError = () => {
+  stubMetadata()
+  const addProjectStub = stubAddProjectError()
   return <AddProjectPage />
 }
