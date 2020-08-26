@@ -269,6 +269,20 @@ Array [
           >
             Resource manager
           </a>
+          <span
+            className="startDate"
+          >
+            2020-08-16
+          </span>
+           
+          -
+           
+          <span
+            className="endDate"
+          >
+            2020-09-06
+          </span>
+          )
         </li>
         <li>
           <a
@@ -278,6 +292,20 @@ Array [
           >
             Fitness planner
           </a>
+          <span
+            className="startDate"
+          >
+            2020-09-20
+          </span>
+           
+          -
+           
+          <span
+            className="endDate"
+          >
+            2020-11-21
+          </span>
+          )
         </li>
       </ul>
     </main>

@@ -38,6 +38,14 @@ const ProjectsPage = () => {
         .map(project => (
           <li key={project.id}>
             <Link to={`/project/${project.id}`}>{project.name}</Link>
+            <span className="startDate">
+              {moment(project.startDate).format("YYYY-MM-DD")}
+            </span>{" "}
+            -{" "}
+            <span className="endDate">
+              {moment(project.endDate).format("YYYY-MM-DD")}
+            </span>
+            )
           </li>
         ))}
     </ul>
