@@ -1,0 +1,9 @@
+{
+  "testFiles": "**/*.cypress.js",
+  "experimentalComponentTesting": true,
+  "componentFolder": "src",
+  "video": false,
+  "env": {
+    "suite": "unit"
+  }
+}

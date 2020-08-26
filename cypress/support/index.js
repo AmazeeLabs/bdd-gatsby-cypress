@@ -14,7 +14,21 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
+import "./commands"
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
+if (Cypress.env("suite") === "unit") {
+  // Gatsby's Link overrides:
+  // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.
+  // This global object isn't set in storybook context, requiring you to override it to empty functions (no-op),
+  // so Gatsby Link doesn't throw any errors.
+  global.___navigate = () => {}
+  global.___loader = {
+    enqueue: () => {},
+    hovering: () => {},
+  }
+  // __PATH_PREFIX__ is used inside gatsby-link an other various places. For storybook not to crash, you need to set it as well.
+  global.__PATH_PREFIX__ = ""
+
+  require("cypress-react-unit-test/support")
+  require("@cypress/code-coverage/support")
+}

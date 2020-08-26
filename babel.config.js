@@ -12,5 +12,10 @@ module.exports = {
       },
     ],
   ],
-  plugins: ["@babel/plugin-proposal-class-properties"],
+  plugins:
+    // When transpiling for Jest (NODE_ENV === 'test') we don't need additional
+    // plugins. For Cypress, we do.
+    process.env.NODE_ENV !== "test"
+      ? [`@babel/plugin-proposal-class-properties`, "istanbul"]
+      : [],
 }
