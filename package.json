@@ -21,7 +21,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "storybook": "^6.0.18"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
@@ -35,8 +36,8 @@
     "babel-loader": "^8.1.0",
     "babel-plugin-require-context-hook": "^1.0.0",
     "chai": "^4.2.0",
-    "cypress": "^4.2.0",
-    "cypress-cucumber-preprocessor": "^2.0.1",
+    "cypress": "^5.0.0",
+    "cypress-cucumber-preprocessor": "^2.5.5",
     "cypress-screenplay": "^0.1.0",
     "jest": "25",
     "jest-css-modules": "^2.1.0",
