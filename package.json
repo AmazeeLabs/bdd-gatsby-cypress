@@ -40,6 +40,7 @@
     "chai": "^4.2.0",
     "cypress": "^5.0.0",
     "cypress-cucumber-preprocessor": "^2.5.5",
+    "cypress-react-unit-test": "^4.11.2",
     "cypress-screenplay": "^0.1.0",
     "istanbul-merge": "^1.1.1",
     "jest": "25",
@@ -99,6 +100,9 @@
     }
   },
   "nyc": {
-    "exclude": [".storybook", "src/external"]
+    "exclude": [
+      ".storybook",
+      "src/external"
+    ]
   }
 }
