@@ -70,7 +70,7 @@
     "api": "node src/api/index.js",
     "test:jest-update": "jest -u",
     "test:jest": "jest --coverage",
-    "test:components": "cypress run -C cypress.unit.json",
+    "test:components": "COVERAGE=hooks cypress run -C cypress.unit.json",
     "test:integration": "start-test api http-get://localhost:4000/?query=%7B__typename%7D develop 8000 cypress:run",
     "coverage:clear": "rm -rf .nyc_output coverage .coverage && mkdir -p .coverage/merged ",
     "coverage:merge": "yarn istanbul-merge --out .coverage/merged/coverage.json .nyc_output/coverage-final.json .nyc_output/out.json",
