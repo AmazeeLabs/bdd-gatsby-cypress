@@ -39,13 +39,16 @@
     "cypress": "^5.0.0",
     "cypress-cucumber-preprocessor": "^2.5.5",
     "cypress-screenplay": "^0.1.0",
+    "istanbul-merge": "^1.1.1",
     "jest": "25",
     "jest-css-modules": "^2.1.0",
     "loki": "^0.20.3",
     "mocha": "^7.1.1",
+    "nyc": "^15.1.0",
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.13.1",
-    "sinon": "^9.0.2"
+    "sinon": "^9.0.2",
+    "start-server-and-test": "^1.11.3"
   },
   "keywords": [
     "gatsby"
@@ -59,8 +62,15 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "cypress": "cypress open",
+    "cypress:run": "cypress run",
     "api": "node src/api/index.js",
-    "test": "cypress run",
+    "test:jest-update": "jest -u",
+    "test:jest": "jest --coverage",
+    "test:integration": "start-test api http-get://localhost:4000/?query=%7B__typename%7D develop 8000 cypress:run",
+    "coverage:clear": "rm -rf .nyc_output coverage .coverage && mkdir -p .coverage/merged ",
+    "coverage:merge": "yarn istanbul-merge --out .coverage/merged/coverage.json .nyc_output/coverage-final.json",
+    "coverage:report": "nyc report --reporter=lcov --reporter=text --reporter=html --temp-dir=.coverage/merged --report-dir=.coverage/merged",
+    "test": "yarn coverage:clear && yarn test:jest && yarn test:integration && yarn coverage:merge && yarn coverage:report",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
