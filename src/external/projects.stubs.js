@@ -26,3 +26,22 @@ export const stubProjectsError = () => {
     error: { message: "Something went wrong ..." },
   })
 }
+
+export const stubAddProject = () => {
+  const addProject = stub()
+  addProject.reset()
+  addProject.returns({ data: { addProject: true } })
+  stub(projects, "useAddProject").returns([addProject, {}])
+  return addProject
+}
+
+export const stubAddProjectError = () => {
+  const addProject = stub()
+  addProject.reset()
+  addProject.returns({ data: null, error: { message: "Boom!" } })
+  stub(projects, "useAddProject").returns([
+    addProject,
+    { loading: false, error: { message: "Boom!" } },
+  ])
+  return addProject
+}

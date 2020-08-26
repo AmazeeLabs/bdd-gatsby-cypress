@@ -1,4 +1,4 @@
-import { gql, useQuery } from "@apollo/client"
+import { gql, useMutation, useQuery } from "@apollo/client"
 
 export const useProjects = () =>
   useQuery(gql`
@@ -11,3 +11,17 @@ export const useProjects = () =>
       }
     }
   `)
+
+export const useAddProject = () =>
+  useMutation(
+    gql`
+      mutation($input: ProjectInput) {
+        addProject(input: $input) {
+          id
+          name
+          startDate
+          endDate
+        }
+      }
+    `
+  )
