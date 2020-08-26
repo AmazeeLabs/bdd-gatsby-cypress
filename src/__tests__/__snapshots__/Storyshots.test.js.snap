@@ -45,6 +45,133 @@ exports[`Storyshots Button Text 1`] = `
 </button>
 `;
 
+exports[`Storyshots Projects Add Form 1`] = `
+Array [
+  <header
+    style={
+      Object {
+        "background": "rebeccapurple",
+        "marginBottom": "1.45rem",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": "0 auto",
+          "maxWidth": 960,
+          "padding": "1.45rem 1.0875rem",
+        }
+      }
+    >
+      <h1
+        style={
+          Object {
+            "margin": 0,
+          }
+        }
+      >
+        <a
+          aria-current="page"
+          className=""
+          href="/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          style={
+            Object {
+              "color": "white",
+              "textDecoration": "none",
+            }
+          }
+        >
+          Project Management
+        </a>
+      </h1>
+    </div>
+  </header>,
+  <div
+    style={
+      Object {
+        "margin": "0 auto",
+        "maxWidth": 960,
+        "padding": "0 1.0875rem 1.45rem",
+      }
+    }
+  >
+    <main>
+      <h2>
+        Add Project
+      </h2>
+      <div>
+        <form
+          action="#"
+          onReset={[Function]}
+          onSubmit={[Function]}
+        >
+          <div>
+            <label
+              htmlFor="name"
+            >
+              Project name
+            </label>
+            *: 
+            <input
+              id="name"
+              name="name"
+              onBlur={[Function]}
+              onChange={[Function]}
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="startDate"
+            >
+              Start date
+            </label>
+            : 
+            <input
+              id="startDate"
+              name="startDate"
+              onBlur={[Function]}
+              onChange={[Function]}
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="endDate"
+            >
+              End date
+            </label>
+            : 
+            <input
+              id="endDate"
+              name="endDate"
+              onBlur={[Function]}
+              onChange={[Function]}
+            />
+          </div>
+          <input
+            type="submit"
+            value="Create"
+          />
+        </form>
+      </div>
+    </main>
+    <footer>
+      © 
+      2020
+      , Built with
+       
+      <a
+        href="https://www.gatsbyjs.org"
+      >
+        Gatsby
+      </a>
+    </footer>
+  </div>,
+]
+`;
+
 exports[`Storyshots Projects Empty 1`] = `
 Array [
   <header

@@ -1,7 +1,9 @@
 import React from "react"
 import ProjectsPageLayout from "../src/pages/projects"
+import AddProjectPage from "../src/pages/projects/add"
 import { stubMetadata } from "../src/external/metadata.stubs"
 import {
+  stubAddProject,
   stubProjects,
   stubProjectsEmpty,
   stubProjectsError,
@@ -35,4 +37,10 @@ export const Error = () => {
   stubMetadata()
   stubProjectsError()
   return <ProjectsPageLayout />
+}
+
+export const AddForm = () => {
+  stubMetadata()
+  const addProjectStub = stubAddProject()
+  return <AddProjectPage />
 }
