@@ -1,11 +1,22 @@
-const { createTask } = require('cypress-screenplay');
+const { createTask } = require("cypress-screenplay")
 
 const visitProjectsOverview = createTask(cy => {
-  cy.visit('/projects');
-});
+  cy.visit("/projects")
+})
 
 const selectProjectInOverview = createTask((cy, project) => {
-  cy.findByText(project).click();
-});
+  cy.findByText(project).click()
+})
 
-module.exports = {visitProjectsOverview, selectProjectInOverview};
+const createProject = createTask((cy, project) => {
+  project.name && cy.findByLabelText("Project name").type(project.name)
+  project.startDate && cy.findByLabelText("Start date").type(project.startDate)
+  project.endDate && cy.findByLabelText("End date").type(project.endDate)
+  cy.findByText("Create").click()
+})
+
+module.exports = {
+  visitProjectsOverview,
+  selectProjectInOverview,
+  createProject,
+}
