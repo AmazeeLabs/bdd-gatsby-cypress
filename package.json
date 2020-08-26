@@ -95,5 +95,8 @@
         "preset": "iPhone 7"
       }
     }
+  },
+  "nyc": {
+    "exclude": [".storybook", "src/external"]
   }
 }
