@@ -258,6 +258,13 @@ Array [
       <h2>
         Projects
       </h2>
+      <a
+        href="/projects/add"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Add project
+      </a>
       <ul
         className="projects"
       >

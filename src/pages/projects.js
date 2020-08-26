@@ -32,23 +32,26 @@ const ProjectsPage = () => {
   }
 
   return (
-    <ul className="projects">
-      {data.projects
-        .filter(project => moment(project.endDate).diff(moment()) > 0)
-        .map(project => (
-          <li key={project.id}>
-            <Link to={`/project/${project.id}`}>{project.name}</Link>
-            <span className="startDate">
-              {moment(project.startDate).format("YYYY-MM-DD")}
-            </span>{" "}
-            -{" "}
-            <span className="endDate">
-              {moment(project.endDate).format("YYYY-MM-DD")}
-            </span>
-            )
-          </li>
-        ))}
-    </ul>
+    <>
+      <Link to="/projects/add">Add project</Link>
+      <ul className="projects">
+        {data.projects
+          .filter(project => moment(project.endDate).diff(moment()) > 0)
+          .map(project => (
+            <li key={project.id}>
+              <Link to={`/project/${project.id}`}>{project.name}</Link>
+              <span className="startDate">
+                {moment(project.startDate).format("YYYY-MM-DD")}
+              </span>{" "}
+              -{" "}
+              <span className="endDate">
+                {moment(project.endDate).format("YYYY-MM-DD")}
+              </span>
+              )
+            </li>
+          ))}
+      </ul>
+    </>
   )
 }
 
