@@ -1,10 +1,9 @@
 import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import { useAddProject } from "../../external/projects"
+import { useAddProject } from "../../hooks/projects"
 import { string, object } from "yup"
 import { Field, Form, Formik } from "formik"
-import { navigate } from "gatsby"
 
 const AddProjectPageLayout = () => {
   const schema = object({
@@ -17,14 +16,11 @@ const AddProjectPageLayout = () => {
       <SEO title="Add Project" />
       <h2>Add Project</h2>
       <div>
-        {error ? <p>{error.message}</p> : null}
+        {error ? <p>{error}</p> : null}
         <Formik
           initialValues={{}}
           validationSchema={schema}
-          onSubmit={async input => {
-            const { data } = await addProject({ variables: { input } })
-            data.addProject && navigate("/projects")
-          }}
+          onSubmit={addProject}
         >
           <Form>
             <div>
